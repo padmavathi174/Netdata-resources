@@ -1,0 +1,37 @@
+# Commands used for Task 7 - Netdata Monitoring
+
+# 1. Check Docker installation
+docker --version
+
+# 2. Run Netdata container
+docker run -d --name=netdata -p 19999:19999 netdata/netdata
+
+# 3. Check if container is running
+docker ps
+
+# 4. Start existing container (if needed)
+docker start netdata
+
+# 5. View container logs
+docker logs netdata
+
+# 6. View last 10 lines of logs
+docker logs netdata --tail 10
+
+# 7. Access dashboard
+# Open browser: http://localhost:19999
+
+# 8. Stop container (when done)
+docker stop netdata
+
+# 9. Remove container (cleanup)
+docker rm netdata
+
+# 10. Remove image (complete cleanup)
+docker rmi netdata/netdata
+
+# 11. Access shell inside container (advanced)
+docker exec -it netdata bash
+
+# 12. Restart container
+docker restart netdata
